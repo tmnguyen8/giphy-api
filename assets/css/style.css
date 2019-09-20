@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+    color: white;
+}
+.myNav {
+    text-align: center;
+    
+}
+.jumbotron {
+    border: 1px solid red;
+    text-align: center;
+
+}
+
