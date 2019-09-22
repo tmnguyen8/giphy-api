@@ -11,12 +11,10 @@ body {
     text-align: center;
 
 }
-/* .grid-container {
-    display: grid;
-    grid-column-gap: 50px;
-    grid-gap: 50px 100px;
-} */
 .image {
     margin: 10px 0;
+}
+#searchBtn {
+    margin: 5px; 5px;
 }
 
