@@ -22,7 +22,8 @@ function displayGif(){
     console.log(response);
 
     for (i of response.data) {
-      var image = $("<img>").attr("src", i.images.fixed_width.url);
+      var image = $(`
+      <img src="${i.images.fixed_width.url}" class="col-4 image">`);
       $(".gifView").append(image)
     }
   })

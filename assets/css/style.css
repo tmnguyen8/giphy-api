@@ -7,11 +7,16 @@ body {
     
 }
 .jumbotron {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     text-align: center;
 
 }
-.btn-success {
-    margin: 10px;
+/* .grid-container {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-gap: 50px 100px;
+} */
+.image {
+    margin: 10px 0;
 }
 
