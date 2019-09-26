@@ -28,29 +28,28 @@ function displayGif(){
 
     for (i of response.data) {
       var image = $(`
-        <a href="${i.images.fixed_width.url}">
           <div class="gif-wrapper" style="transform: translate3d(0px, 0px, 0px) background-color: rgb(233,236,239);">
-            <img src="${i.images.fixed_width.url}" class="gif-image" class="d">
+            <img src="${i.images.fixed_width.url}" class="gif-image d" data-still="${i.images.fixed_width_still.url}" data-animate="${i.images.fixed_width.url}" data-state="animate">
             <p class="card-text">Rating: ${i.rating}</p>
-            <button id="animateGifBtn" class="btn fa fa-play-circle" data-search="${i}" data-animate=""></button>
-
+            <div class="overlay"></div>
           </div>
-        </a>
       `);
 
       $(".gifView").append(image)
+
     }
   })
 }
 // EXECUTION
 // *********************************************************
-// This function handles events where one button is clicked
+// on click #addBtn adds the content from the input into the array and display it as button in the searchView
+// check for duplicates or empty string
 $("#addBtn").on("click", function(event) {
     event.preventDefault();
     var inputText = $("#inputText").val()
     // Check if the searchText already exist;
-    if (searchList.includes(inputText)) {
-      alert("This search already exists in your list. Select another search term");
+    if (searchList.includes(inputText) || inputText === "") {
+      alert("This search already exists in your list or invalid. Select another search term");
     } else {
       searchList.push(inputText);
     }
@@ -58,21 +57,22 @@ $("#addBtn").on("click", function(event) {
     $("#searchView").empty();
     displayButtons();
 });
-
+// On click #clearBtn to clear the array searchList and empty the content in the searchView
 $(document).on("click", "#clearBtn", function(event) {
   event.preventDefault();
   searchList = [];
   $("#searchView").empty();
   displayButtons();
 });
-
+// On click #searchBtn to display the gif based on the searchText
 $(document).on("click", "#searchBtn", function(event) {
     event.preventDefault();
     searchText = $(this).data("search");
-    queryURL = `https://api.giphy.com/v1/gifs/search?q=${searchText}&limit=25&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9`;
+    queryURL = `https://api.giphy.com/v1/gifs/search?q=${searchText}&limit=24&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9`;
     displayGif();
 });
 
+// Delete button to remove the searchText from searchList 
 $(document).on("click", "#deleteBtn", function(event) {
   event.preventDefault();
   searchText = $(this).data("search");
@@ -83,4 +83,19 @@ $(document).on("click", "#deleteBtn", function(event) {
   }
   $("#searchView").empty();
   displayButtons();
+});
+// Click on .gif-image to either pause the gif or animate the gif
+$(document).on("click", ".gif-image", function(event){
+  event.preventDefault();
+  var state = $(this).attr("data-state");
+  // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+  // Then, set the image's data-state to animate
+  // Else set src to the data-still value
+  if (state === "still") {
+    $(this).attr("src", $(this).attr("data-animate"));
+    $(this).attr("data-state", "animate");
+  } else {
+    $(this).attr("src", $(this).attr("data-still"));
+    $(this).attr("data-state", "still");
+  }
 });
