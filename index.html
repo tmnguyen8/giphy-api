@@ -6,28 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Giphy API</title>
 </head>
 <body>
     <nav class="myNav container-fluid">
-        <h1>GIPHY API</h1>
+        <h1>GIPHY API APP</h1>
     </nav>
 
     <div class="jumbotron searchContainer container">
         <div class="input-group mb-3">
-            <input id="searchText" type="text" class="form-control" placeholder="Giphy Image" aria-label="Giphy Image" aria-describedby="basic-addon2">
+            <input id="inputText" type="text" class="form-control" placeholder="Giphy Image" aria-label="Giphy Image" aria-describedby="basic-addon2">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button" id="addBtn">Add</button>
+              <button class="btn btn-outline-secondary main-buttons" type="button" id="addBtn">Add</button>
+              <button class="btn btn-outline-secondary main-buttons" type="button" id="clearBtn">Clear</button>
             </div>
         </div>
-        <div class="container" id="searchView">
+        <div class="container" id="searchView" >
 
         </div>
     </div>
 
-    <div class="jumbotron container">
-        <div class="row gifView grid-container">
+    <div class="jumbotron container gif-container">
+        <div class="row gifView grid-container" style="background-color:black">
 
         </div>
 

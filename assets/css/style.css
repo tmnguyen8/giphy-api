@@ -14,7 +14,61 @@ body {
 .image {
     margin: 10px 0;
 }
-#searchBtn {
-    margin: 5px; 5px;
+.main-buttons {
+    margin: 0 10px;
+    border-radius: 0.5em;
 }
+#searchView {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 10px 0;
+
+}
+.btn-wrapper {
+    border: 1px solid grey;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: DodgerBlue;
+}
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.gif-container {
+    display: flex;
+    box-align: stretch;
+    -moz-align-items: stretch;
+    -ms-align-items: stretch;
+    -o-align-items: stretch;
+    align-items: center;
+    -ms-flex-align: stretch;
+    font-size: 14px;
+    background-color: black;
+    text-decoration: none;
+}
+
+.gif-wrapper {
+    margin: 8px;
+    padding: 0px;
+    background-color: whitesmoke
+}
+@media (max-width: 1079px) {
+    .gif-image {
+        height: 350px; 
+        width: 500px;;
+    }
+}
+@media (min-width: 1080px) {
+    .gif-image {
+        height: 250px; 
+        width: 350px;;
+    }
+}
+
 
