@@ -39,7 +39,6 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
-/* gif-content is changed when the page sizes are adjusted */
 .gif-content {
     column-count: 3;
     column-gap: 1em;
@@ -53,7 +52,7 @@ body {
     padding: 0;
     margin-bottom: 0.5em;
     page-break-inside: avoid;
-    background-color: rgb(224,248,254);
+    background-color: lavender;
     box-shadow: 9px 20px 10px rgba(0,0,0,0.5);
 }
 .gif-wrapper img {
@@ -61,12 +60,20 @@ body {
     height: 100%
 }
 
+.fa-play {
+    font-size: 0.9em;
+    background-color: blue;
+    position: absolute;
+    top: 25;
+    opacity: 0;
+}
+
 .favorite {
     position: absolute;
     right: 0;
     cursor: pointer;
     border-bottom-left-radius: 0.5em;
-    background-color: dodgerblue;
+    background-color: blue;
     padding: 0.5em;
 }
 
@@ -74,6 +81,4 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 2m 0.5em;
-    text-align: center;
-    color: rgb(13,91,110);
 }
