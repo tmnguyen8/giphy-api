@@ -10,7 +10,6 @@ body {
 .jumbotron {
     /* border: 1px solid red; */
     text-align: center;
-
 }
 
 .main-buttons {
@@ -39,11 +38,20 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
+
 /* gif-content is changed when the page sizes are adjusted */
 .gif-content {
     column-count: 3;
     column-gap: 1em;
 }
+.form-check {
+    text-align: left;
+    color: black;
+
+
+}
+
+
 .gif-wrapper {
     border: 1px solid grey;
     page-break-inside: avoid;
