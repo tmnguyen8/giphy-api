@@ -1,9 +1,9 @@
 // GLOBAL VARIABLES
 // *********************************************************
-let searchList = [];
-let searchText = "";
-let queryURL = "";
-let favoriteList = [];
+var searchList = [""];
+var searchText = "";
+var queryURL = "";
+var favoriteList = [""];
 // FUNCTIONS
 // *********************************************************
 // function to remove item from array
@@ -118,6 +118,7 @@ $(document).on("click", "#addBtn", function(event) {
     } else {
       searchList.push(inputText);
     }
+    searchList = arrayRemove(searchList,"");
 
     displayButtons();
     $("#inputText").val("");
@@ -185,6 +186,7 @@ $(document).on("click", ".favorite", function (event){
     favoriteList = arrayRemove(favoriteList, imageId);
     
   }
+  favoriteList = arrayRemove(favoriteList, "");
   localStorage.setItem("favorites", JSON.stringify(favoriteList));
 });
 // event listener to when the check box is changed
