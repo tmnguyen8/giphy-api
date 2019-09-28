@@ -41,7 +41,7 @@ body {
 
 /* gif-content is changed when the page sizes are adjusted */
 .gif-content {
-    column-count: 3;
+    column-count: 1;
     column-gap: 1em;
 }
 .form-check {
@@ -84,4 +84,44 @@ body {
     margin: 2m 0.5em;
     text-align: center;
     color: rgb(13,91,110);
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 575px) {
+    .gif-content {
+        column-count: 1;
+        column-gap: 1em;
+    }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    .gif-content {
+        column-count: 2;
+        column-gap: 1em;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .gif-content {
+        column-count: 2;
+        column-gap: 1em;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .gif-content {
+        column-count: 3;
+        column-gap: 1em;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .gif-content {
+        column-count: 3;
+        column-gap: 1em;
+    }
 }

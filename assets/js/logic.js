@@ -30,15 +30,16 @@ function loadLocalStorageFav() {
 function displayButtons() {
     // clear the button-views div
     $("#searchView").empty();
-
-    for (i of searchList) {
+    if (searchList.length !== 0) {
+      for (i of searchList) {
         $("#searchView").append(`
         <div class="btn-wrapper">
         <button id="searchBtn" class="btn btn-secondary" data-search="${i}">${i}</button>
         <button id="deleteBtn" class="btn fas fa-times" data-search="${i}"></button>
         </div>
         `)
-    };
+      };
+    }
 
     localStorage.setItem("buttons", JSON.stringify(searchList));
 };
@@ -108,7 +109,7 @@ loadLocalStorageButtons();
 
 // on click #addBtn adds the content from the input into the array and display it as button in the searchView
 // check for duplicates or empty string
-$("#addBtn").on("click", function(event) {
+$(document).on("click", "#addBtn", function(event) {
     event.preventDefault();
     var inputText = $("#inputText").val()
     // Check if the searchText already exist;
@@ -124,7 +125,7 @@ $("#addBtn").on("click", function(event) {
 
 // On click #clearBtn to clear the array searchList and empty the content in the searchView
 $(document).on("click", "#clearBtn", function(event) {
-  event.preventDefault();
+  // event.preventDefault();
   searchList = [];
   displayButtons();
 });
