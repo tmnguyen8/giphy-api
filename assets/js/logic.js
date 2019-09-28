@@ -75,14 +75,12 @@ function displayGif(){
 function displayFav() {
   $(".gif-content").empty();
   favoriteStr = favoriteList.join(",")
-  console.log(favoriteStr)
   var queryFavURL = `https://api.giphy.com/v1/gifs?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&ids=${favoriteStr}`;
 
   $.ajax({
     url: queryFavURL,
     method: "GET"
   }).then(function(response) {
-    console.log(response);
 
     for (i of response.data) {
       var image = $(`
@@ -202,5 +200,4 @@ $(document).on("click", "input:checkbox", function(){
 // debugging error caused by Github for treating empty array as null
 if (searchList === null) {
   searchList = [];
-  console.log(searchList)
 };
