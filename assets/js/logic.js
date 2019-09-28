@@ -30,7 +30,7 @@ function loadLocalStorageFav() {
 function displayButtons() {
     // clear the button-views div
     $("#searchView").empty();
-    if (searchList.length !== 0 || searchList !== null) {
+    if (searchList !== null) {
       for (i of searchList) {
         $("#searchView").append(`
         <div class="btn-wrapper">
