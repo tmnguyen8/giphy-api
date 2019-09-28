@@ -76,7 +76,7 @@ function displayFav() {
   $(".gif-content").empty();
   favoriteStr = favoriteList.join(",")
   console.log(favoriteStr)
-  var queryFavURL = `http://api.giphy.com/v1/gifs?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&ids=${favoriteStr}`;
+  var queryFavURL = `https://api.giphy.com/v1/gifs?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&ids=${favoriteStr}`;
 
   $.ajax({
     url: queryFavURL,
