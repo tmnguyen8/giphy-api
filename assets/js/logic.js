@@ -1,9 +1,9 @@
 // GLOBAL VARIABLES
 // *********************************************************
-var searchList = [""];
+var searchList = [];
 var searchText = "";
 var queryURL = "";
-var favoriteList = [""];
+var favoriteList = [];
 // FUNCTIONS
 // *********************************************************
 // function to remove item from array
@@ -118,7 +118,7 @@ $(document).on("click", "#addBtn", function(event) {
     } else {
       searchList.push(inputText);
     }
-    searchList = arrayRemove(searchList,"");
+    
 
     displayButtons();
     $("#inputText").val("");
@@ -186,7 +186,6 @@ $(document).on("click", ".favorite", function (event){
     favoriteList = arrayRemove(favoriteList, imageId);
     
   }
-  favoriteList = arrayRemove(favoriteList, "");
   localStorage.setItem("favorites", JSON.stringify(favoriteList));
 });
 // event listener to when the check box is changed
@@ -199,3 +198,9 @@ $(document).on("click", "input:checkbox", function(){
   }
   
 });
+
+// debugging error caused by Github for treating empty array as null
+if (searchList === null) {
+  searchList = [];
+  console.log(searchList)
+};
